@@ -38,6 +38,7 @@ console.log(this.id);
     this.isEditar();
   }
   AgregarObra(){
+    this.titulo='Agregar Obra';
     const obra : any = {
       titulo: this.createObra.value.titulo,
       autor: this.createObra.value.autor,
@@ -83,8 +84,8 @@ console.log(this.id);
     }
   }
   isEditar(){
-    this.titulo="Editar Obra"
     if(this.id !== null){
+      this.titulo="Editar Obra"
      this.loading = true;
      this.obraService.getObra(this.id).subscribe(data=>{
       this.loading=false;
