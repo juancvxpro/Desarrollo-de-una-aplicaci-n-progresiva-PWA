@@ -1,0 +1,46 @@
+
+
+  <div class="container mt-4 ">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+         <div class="card text-center">
+           <div class="card-body">
+             <h3>{{titulo}} <div *ngIf="loading" class="spinner-border text-secondary d-flex justify-content-between" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>  </h3>
+            
+             <div *ngIf="submitted && createObra.invalid"  class="alert alert-danger" role="alert"> CAMPOS OBLIGATORIOS</div>
+              <form class="mt-4" [formGroup]="createObra" (ngSubmit)="AgregarEditarObra()">
+                <div clas="row">
+                  <div class="col">
+                    <input type="text" class="form-control mt-4" 
+                    
+                    formControlName="titulo" placeholder="Titulo">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control mt-4" 
+                    formControlName="autor" placeholder="Autor">
+                  </div>
+                  <div class="col">
+                    <input type="date" class="form-control mt-4" 
+                    formControlName="fecha" placeholder="Lanzamiento">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control mt-4"
+                    formControlName="descripcion"  placeholder="Descripcion">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control mt-4 "style="margin: buttom 6px;"
+                    formControlName="imagen" placeholder="Imagen">
+                  </div>
+                </div>
+              <div class="card-body d-flex justify-content-between align-items-center mt-3">
+                <button type="text" class="btn btn-secondary btn-lg" routerLink="lista-obras">Regresar</button>
+                <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+              </div>
+            </form>
+           </div>
+         </div>
+        </div>
+    </div>
+</div>
