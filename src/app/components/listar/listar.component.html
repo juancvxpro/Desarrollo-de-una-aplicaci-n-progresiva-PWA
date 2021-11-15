@@ -22,7 +22,7 @@
                     <td>{{obra.titulo}}</td>
                     <td>{{obra.autor}}</td>
                     <td>{{obra.fecha}}</td>
-                    <td>{{obra.imagen}}o</td>
+                    <td>{{obra.imagen}}</td>
                     <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editar-obras/',obra.id]"></i>
                     <i (click)="eliminarObras(obra.id)" class="fas fa-trash-alt fa-lg text-danger mr-2"></i>
                   </tr>
