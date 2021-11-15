@@ -5,5 +5,4 @@ autor:string=""
 fecha:string=""
 descripcion:string=""
 imagen:string=""
-
 }
