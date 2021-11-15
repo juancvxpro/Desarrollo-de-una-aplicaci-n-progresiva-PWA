@@ -54,4 +54,9 @@ export class ListarComponent implements OnInit {
 
     })
   }
+
+  buscarObras(id:String){
+
+
+  }
 }
