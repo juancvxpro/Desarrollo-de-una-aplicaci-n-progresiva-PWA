@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ObrasService } from 'src/app/servicios/obras.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-listar',
@@ -9,11 +11,13 @@ import { ObrasService } from 'src/app/servicios/obras.service';
 })
 export class ListarComponent implements OnInit {
   obras: any[] =[];
-
-  constructor(private _obrasService:ObrasService,
+  resultado: any[] =[];
+ 
+  titulo:string | null;
+  constructor(private fb: FormBuilder,private _obrasService:ObrasService,
     private toastr: ToastrService) { 
-  
-
+    this.titulo=null;
+     
   }
  
   ngOnInit(): void {
@@ -53,8 +57,6 @@ export class ListarComponent implements OnInit {
     })
   }
 
-  buscarObras(id:String){
-
-
-  }
+  
+ 
 }

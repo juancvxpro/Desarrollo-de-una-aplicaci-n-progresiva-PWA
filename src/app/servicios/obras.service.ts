@@ -3,10 +3,13 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ObrasService {
+
+ 
 
   constructor(private afs : AngularFirestore) { }
 
@@ -39,4 +42,10 @@ export class ObrasService {
     return this.afs.collection('obras').doc(id).update(data);
 
   }
+
+ getObrasFiltro(filtro:string):Observable<any>{
+
+  return this.afs.collection('obras').doc(filtro).snapshotChanges();
+}
+
 }
