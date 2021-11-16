@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
 import { ObrasService } from 'src/app/servicios/obras.service';
 
 @Component({
