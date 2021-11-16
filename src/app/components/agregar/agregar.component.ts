@@ -32,7 +32,7 @@ export class AgregarComponent implements OnInit {
   autor:['',Validators.required ],
   fecha:['',Validators.required ],
   descripcion:['',Validators.required ],
-  imagen:['',Validators.required ]
+  imagen:['', ]
 
 })
 

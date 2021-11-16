@@ -17,6 +17,7 @@
                     <th scope="col">Titulo</th>
                     <th scope="col">Autor</th>
                     <th scope="col">Lanzamiento</th>
+                    <th scope="col">Descripcion</th>
                     <th scope="col">imagen</th>
                   </tr>
                 </thead>
@@ -25,6 +26,7 @@
                     <td>{{obra.titulo}}</td>
                     <td>{{obra.autor}}</td>
                     <td>{{obra.fecha}}</td>
+                    <td>{{obra.descripcion}}</td>
                     <td><img class="img" src="{{obra.imagen}}"></td>
                     <i  class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editar-obras/',obra.id]"></i>
                     <i (click)="eliminarObras(obra.id)" class="fas fa-trash-alt fa-lg text-danger mr-2"></i>
