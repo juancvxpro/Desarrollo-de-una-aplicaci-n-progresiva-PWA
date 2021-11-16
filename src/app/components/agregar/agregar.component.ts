@@ -99,15 +99,14 @@ console.log(this.id);
         autor: data.payload.data()['autor'],
         fecha: data.payload.data()['fecha'],
         descripcion: data.payload.data()['descripcion'],
-        imagen:data.payload.data()['imagen'],
-
+        imagen:data.payload.data()['imagen'] 
       })
-      if(this.createObra.value.imagen!==null){
+     
 
         this.newImg = this.createObra.value.imagen;
-        console.log(this.newImg);
+        console.log('aqui el path de lña ima',this.newImg);
 
-      }
+    
     
      } )
 
@@ -150,11 +149,11 @@ console.log(this.id);
           this.newImg = image.target?.result as string;
       });
        reader.readAsDataURL(event.target.files[0]);
-
-     }
+         
+     
 
     }
   }
 
 
-
+}
