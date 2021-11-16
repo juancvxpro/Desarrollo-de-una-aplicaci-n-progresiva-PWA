@@ -9,7 +9,6 @@
                 <table *ngIf="obras.length > 0" class="table table-stripped mt-5">
                 <thead>
                   <tr>
-                    
                     <th scope="col">Titulo</th>
                     <th scope="col">Autor</th>
                     <th scope="col">Lanzamiento</th>
@@ -18,7 +17,6 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let obra of obras">
-                
                     <td>{{obra.titulo}}</td>
                     <td>{{obra.autor}}</td>
                     <td>{{obra.fecha}}</td>
