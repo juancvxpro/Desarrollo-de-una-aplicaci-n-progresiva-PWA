@@ -21,7 +21,7 @@ export class ListarComponent implements OnInit {
   }
  
   ngOnInit(): void {
-    this.getObras();
+   this.getObras();
   }
 
   

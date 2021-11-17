@@ -14,16 +14,16 @@
           <form class="mt-4" [formGroup]="createObra" (ngSubmit)="AgregarEditarObra ()">
             <div clas="row">
               <div class="col">
-                <input type="text" class="form-control mt-4" formControlName="titulo" placeholder="Titulo">
+                <input type="text"  class="form-control mt-4" formControlName="titulo" placeholder="Titulo" pInputText>
                 </div>
                 <div class="col">
-                <input type="text" class="form-control mt-4" formControlName="autor" placeholder="Autor">
+                <input type="text" class="form-control mt-4" formControlName="autor" placeholder="Autor" pInputText>
                 </div>
                 <div class="col">
-                <input type="date" class="form-control mt-4" formControlName="fecha" placeholder="Lanzamiento">
+                <input type="date" class="form-control mt-4" formControlName="fecha" placeholder="Lanzamiento" pInputText>
                 </div>
                 <div class="col">
-                <input type="text" class="form-control mt-4" formControlName="descripcion" placeholder="Descripcion">
+                <input type="text" class="form-control mt-4" formControlName="descripcion" placeholder="Descripcion" pInputText>
                 </div>
                 <div class="col">
                 <label for="file-upload" class="d-flex justify-content-between btn-lg mt-4">
@@ -31,7 +31,7 @@
                 <i  class="fas fa-file-image "> </i> 
 
                 </label>
-                <input type="text" class="form-control " style="display:none;"  placeholder="imagen">
+                <input type="text" class="form-control " style="display:none;"  placeholder="imagen" >
                 <input (change)="newImage($event)" id="file-upload" style="display:none;" type="file" class="form-control justify-content-between float-right  mt-4 "  
                  accept="image/*" formControlName="imagen" placeholder="imagen"> 
                 
@@ -40,8 +40,8 @@
               
             </div>
             <div class="card-body d-flex justify-content-between align-items-center mt-3">
-              <button type="text" class="btn btn-secondary btn-lg" routerLink="lista-obras">Regresar</button>
-              <button type="submit" class="btn btn-dark btn-lg">Guardar</button>
+              <button pButton type="button" class="p-button-secondary" routerLink="lista-obras">Regresar</button>
+              <button pButton type="submit" class="p-button-success" badge="8">Guardar</button>
             </div>
             <div class="col">
               <img class="img"[src]="newImg">

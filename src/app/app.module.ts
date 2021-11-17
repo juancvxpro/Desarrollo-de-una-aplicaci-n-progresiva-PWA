@@ -7,12 +7,20 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AgregarComponent } from './components/agregar/agregar.component';
 import { ListarComponent } from './components/listar/listar.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { environment } from 'src/environments/environment';
+
+import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+
+
 
 @NgModule({
   declarations: [
@@ -30,8 +38,12 @@ import { environment } from 'src/environments/environment';
     AngularFirestoreModule,
     ReactiveFormsModule,
     CommonModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(),
+    TableModule,
+    InputTextModule,
+    ButtonModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]
