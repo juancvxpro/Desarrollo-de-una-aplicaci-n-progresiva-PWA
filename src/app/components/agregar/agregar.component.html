@@ -8,12 +8,13 @@
               <span class="sr-only">Loading...</span>
             </div>
           </h3>
-
+          <!--Creacion de obras-->
           <div *ngIf="submitted && createObra.invalid" class="alert alert-danger" role="alert"> CAMPOS OBLIGATORIOS
           </div>
           <form class="mt-4" [formGroup]="createObra" (ngSubmit)="AgregarEditarObra ()">
             <div clas="row">
               <div class="col">
+                <!--Titulo de la obra-->
                 <input type="text"  class="form-control mt-4" formControlName="titulo" placeholder="Titulo" pInputText>
                 </div>
                 <div class="col">
