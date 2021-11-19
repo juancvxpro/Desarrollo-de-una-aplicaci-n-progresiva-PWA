@@ -17,6 +17,7 @@ import { ListarComponent } from './components/listar/listar.component';
 import { environment } from 'src/environments/environment';
 
 import {TableModule} from 'primeng/table';
+import {OrderListModule} from 'primeng/orderlist';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 
@@ -42,7 +43,8 @@ import {ButtonModule} from 'primeng/button';
     ToastrModule.forRoot(),
     TableModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    OrderListModule
  
   ],
   providers: [],

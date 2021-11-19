@@ -58,5 +58,18 @@ export class ListarComponent implements OnInit {
   }
 
   
- 
+  onSelectionChange(event:any){
+
+    this._obrasService.getObras().subscribe(data => {
+      this.obras=[];
+      data.forEach((element:any) => {
+          this.obras.push({
+         id:event.payload.doc.id,
+         ...event.payload.doc.data()
+          })
+        });
+        console.log(this.obras);
+      });
+  }
+
 }
