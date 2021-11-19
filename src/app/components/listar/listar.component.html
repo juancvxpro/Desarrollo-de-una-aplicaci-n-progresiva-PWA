@@ -1,50 +1,52 @@
 <div class="container mt-4">
-    <div class="card">
-        <div class="card-body">
-            <span  class="h3">Listado de obras</span> 
+  <div class="card">
+      <div class="card-body">
+          <span  class="h3">Listado de obras</span> 
+            
+              <p align="right" > <button pButton type="button"  class="p-button-success"  routerLink="/crear-obras"> <i class="fas fa-plus justify-content:left" ></i> Agregar</button></p>          
+              <div style="margin-top: 30px; " *ngIf="obras.length==0" class="alert alert-info justify-content:center" role="alert">
+                No existen obras registradas
+              </div>            
               
-                <p align="right" > <button pButton type="button"  class="p-button-success"  routerLink="/crear-obras"> <i class="fas fa-plus justify-content:left" ></i> Agregar</button></p>          
-                <div style="margin-top: 30px; " *ngIf="obras.length==0" class="alert alert-info justify-content:center" role="alert">
-                  No existen obras registradas
-                </div>            
-                <p-table *ngIf="obras.length > 0" #dt [value]="obras" [globalFilterFields]="['obras.titulo','obras.autor','obras.fecha','obras.descripcion']">
-                  <ng-template pTemplate="caption">
-                    <div class="p-d-flex">
-                        <span class="p-input-icon-left p-ml-auto">
-                            <i class="pi pi-search"></i>
-                            <input pInputText type="text" (input)="dt.filterGlobal($event.target, 'contains')" placeholder="Buscar" />
-                        </span>
-                    </div>
-                <!--Listado de obras-->
+                <ng-template pTemplate="caption">
+                  <div class="p-d-flex">
+                      <span class="p-input-icon-left p-ml-auto">
+                          <i class="pi pi-search"></i>
+                          <input pInputText type="text" filterBy="titulo" 
+                          (onSelectionChange)="onSelectionChange($event) " placeholder="Buscar" />
+                      </span>
+                  </div>
+              </ng-template>
+              <p-table>
+                <ng-template pTemplate="header" let-columns>
+                      
+                                <tr>
+                                  <th scope="col">Titulo</th>
+                                  <th scope="col">Autor</th>
+                                  <th scope="col">Lanzamiento</th>
+                                  <th scope="col">Descripcion</th>
+                                  <th scope="col">Imagen</th>
                 </ng-template>
-                  <ng-template pTemplate="header" let-columns>
+              </p-table>
+                <p-orderList *ngIf="obras.length > 0" #dt [value]="obras"  filterBy="titulo" (onSelectionChange)="onSelectionChange($event)" >
+               
+                <ng-template pTemplate="body" let-obra>
               
-                                  <tr>
-                                    <th scope="col">Titulo</th>
-                                    <th scope="col">Autor</th>
-                                    <th scope="col">Lanzamiento</th>
-                                    <th scope="col">Descripcion</th>
-                                    <th scope="col">Imagen</th>
-                  </ng-template>
-                
-                  <ng-template pTemplate="body" let-obra>
-                
-                                 <tr >
-                                    <td>{{obra.titulo}}</td>
-                                    <td>{{obra.autor}}</td>
-                                    <td>{{obra.fecha}}</td>
-                                    <td>{{obra.descripcion}}</td>
-                                    <td><img class="img" src="{{obra.imagen}}"></td>
-                                    <td ><i  class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editar-obras/',obra.id]"></i></td>
-                                    <td><i (click)="eliminarObras(obra.id)" class="fas fa-trash-alt fa-lg text-danger mr-2"></i></td>
-                                  </tr>
+                               <tr >
+                                  <td>{{obra.titulo}}</td>
+                                  <td>{{obra.autor}}</td>
+                                  <td>{{obra.fecha}}</td>
+                                  <td>{{obra.descripcion}}</td>
+                                  <td><img class="img" src="{{obra.imagen}}"></td>
+                                  <td ><i  class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editar-obras/',obra.id]"></i></td>
+                                  <td><i (click)="eliminarObras(obra.id)" class="fas fa-trash-alt fa-lg text-danger mr-2"></i></td>
+                                </tr>
 
-                       </ng-template>
-                </p-table>
-        </div>
+                     </ng-template>
+                   
+                    </p-orderList>
+      </div>
 
-    </div>
+  </div>
 
 </div>
-
-
